@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="login">
     <vue-particles
       color="#dedede"
       :particleOpacity="0.7"
@@ -20,13 +20,6 @@
     >
     </vue-particles>
     <div class="title"></div>
-    <!--<div class="bac">-->
-      <!--<ul>-->
-        <!--<li><img src="@/assets/img/main5-pic1.png"></li>-->
-        <!--<li><img src="@/assets/img/main5-pic2.png"></li>-->
-        <!--<li><img src="@/assets/img/main5-pic3.png"></li>-->
-      <!--</ul>-->
-    <!--</div>-->
     <div class="container">
       <div class="head"><Icon type="md-log-in" /> 欢迎登录</div>
       <Form ref="formInline" :model="formInline" :rules="ruleInline" inline>
@@ -97,100 +90,18 @@
 </script>
 
 <style lang="scss" scoped>
-  .bac {
-    -webkit-transition: All 1s 0s;
-    -moz-transition: All 1s 0s;
-    -ms-transition: All 1s 0s;
-    margin-top: 200px;
+  .lizi{
+    width: 100%;
+    height: 100%;
+  }
+  .login{
+    width: 100%;
+    height: 100%;
+    background:  url("../../images/loginbg.png") no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
   }
 
-  .bac ul {
-    margin: 0;
-    padding: 0;
-    -webkit-transform: translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);
-    -moz-transform: translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);
-    -ms-transform: translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);
-  }
-
-  .bac ul li {
-    list-style: none;
-    position: absolute;
-    width: 530px;
-    height: 530px;
-    left: 30%;
-    top: 100%;
-    margin-left: -200px;
-    margin-top: -100px;
-  }
-
-  .bac li img {
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-  }
-
-  .bac ul li:nth-of-type(1) {
-    -webkit-transition: All 1.2s 0s;
-    -moz-transition: All 1.2s 0s;
-    -ms-transition: All 1.2s 0s;
-    transition: All 1.2s 0s;
-    -webkit-transform: translateX(0) translateY(0) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);
-    -moz-transform: translateX(0) translateY(0) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);
-    -ms-transform: translateX(0) translateY(0) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);
-    transform: translateX(0) translateY(0) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);
-  }
-
-  .bac ul li:nth-of-type(1) img {
-    -webkit-animation: z 5s linear 0s infinite;
-    -moz-animation: z 5s linear 0s infinite;
-    -ms-animation: z 5s linear 0s infinite;
-    animation: z 5s linear 0s infinite;
-  }
-
-  .bac ul li:nth-of-type(2) {
-    -webkit-animation: y 20s linear 0s infinite;
-    -moz-animation: y 20s linear 0s infinite;
-    -ms-animation: y 20s linear 0s infinite;
-    animation: y 20s linear 0s infinite;
-  }
-
-  .bac ul li:nth-of-type(3) {
-    -webkit-animation: z 10s linear 0s infinite;
-    -moz-animation: z 10s linear 0s infinite;
-    -ms-animation: z 10s linear 0s infinite;
-    animation: z 10s linear 0s infinite;
-  }
-
-  @-webkit-keyframes z {
-    from {
-      -webkit-transform: translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);
-      -moz-transform: translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);
-      -ms-transform: translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);
-      transform: translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);
-    }
-    to {
-      -webkit-transform: translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(360deg) scaleX(1) scaleY(1) scaleZ(1);
-      -moz-transform: translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(360deg) scaleX(1) scaleY(1) scaleZ(1);
-      -ms-transform: translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(360deg) scaleX(1) scaleY(1) scaleZ(1);
-      transform: translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(360deg) scaleX(1) scaleY(1) scaleZ(1);
-    }
-  }
-
-  @-webkit-keyframes y {
-    from {
-      -webkit-transform: translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);
-      -moz-transform: translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);
-      -ms-transform: translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);
-      transform: translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);
-    }
-    to {
-      -webkit-transform: translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(-360deg) scaleX(1) scaleY(1) scaleZ(1);
-      -moz-transform: translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(-360deg) scaleX(1) scaleY(1) scaleZ(1);
-      -ms-transform: translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(-360deg) scaleX(1) scaleY(1) scaleZ(1);
-      transform: translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(-360deg) scaleX(1) scaleY(1) scaleZ(1);
-    }
-  }
   .title{
     width: 200px;
     height: 100px;
@@ -199,7 +110,6 @@
     top:8%;
     left: 8%;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 6px 20px;
-    background:  url("../../assets/img/logo.png") no-repeat center 80%;
     background-size: 90%;
   }
   .container {
@@ -208,10 +118,11 @@
     height: 350px;
     padding: 30px 0 80px 0;
     position: fixed;
-    top: 22%;
+    top: 25%;
     right: 15%;
     box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 20px;
     border-radius: 5px;
+    background:rgba(255,255,255,0.1);
 
   .head {
     text-align: center;
@@ -242,12 +153,12 @@
     position: absolute;
     top: 3px;
     left: 0;
-    background: url("../../assets/img/noauto.png") no-repeat;
+    background: url("../../images/noauto.png") no-repeat;
     background-size: 85% auto;
   }
   &:checked {
   +span {
-    background: url("../../assets/img/autologin.png") no-repeat;
+    background: url("../../images/autologin.png") no-repeat;
     background-size: 85% auto;
   }
   }

@@ -1,4 +1,5 @@
 $DirectionList:top,left,right,bottom;
+html,body{width:100%;height: 100%}
 /*a*/
 a{text-decoration: none;color:#333;}
 a:link, a:visited{text-decoration: none;border:0;}
@@ -57,7 +58,7 @@ $animal-list:3,6,9;
 .images-large{width: 130%;float: left;}
 .images-small{width: 60%;float: left;}
 .images-midel{width: 70%;float: left;}
-/*icons*/ 
+/*icons*/
 .images-iocn{width: 30px;}
 /*tabsel*/
 .tabsel{display: block;}
@@ -219,7 +220,7 @@ $align-self: auto,flex-start,flex-end,center,baseline,stretch;
 .unselect {
 	-moz-user-select:none;
       -webkit-user-select:none;
-      user-select:none; 
+      user-select:none;
 }
 //animation
 .example-enter {
@@ -342,7 +343,7 @@ $align-self: auto,flex-start,flex-end,center,baseline,stretch;
 		display: flex;
 		align-items: flex-start;
 		align-content: flex-start;
-		flex-direction:row-reverse; 
+		flex-direction:row-reverse;
 	}
 	.Media-figure {margin-right: 1em;}
 	.Media-body {flex: 1;}

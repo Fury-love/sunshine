@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import '@/components/iview-ui'                //api:https://www.iviewui.com/docs/guide/start
+import '@/style/common.scss'
 
 Vue.use(router);
 
