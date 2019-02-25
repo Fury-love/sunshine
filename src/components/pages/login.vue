@@ -70,7 +70,7 @@
           ],
           password: [
             {required: true, message: '密码不能为空', trigger: 'blur'},
-            {type: 'string', min: 6, message: '密码不能小于6位！', trigger: 'blur'}
+            {type: 'string', min: 5, message: '密码不能小于5位！', trigger: 'blur'}
           ]
         }
       }
@@ -78,11 +78,14 @@
     methods: {
       handleSubmit(name) {
         this.$refs[name].validate((valid) => {
-          if (valid) {
-            this.$Message.success('Success!');
-          } else {
-            this.$Message.error('Fail!');
+          if(this.formInline.user == 'admin'&&this.formInline.password == 'admin'){
+            this.$router.push({path:'/home'})
           }
+          // if (valid) {
+          //
+          // } else {
+          //
+          // }
         })
       }
     }
@@ -118,7 +121,7 @@
     height: 350px;
     padding: 30px 0 80px 0;
     position: fixed;
-    top: 25%;
+    top: 28%;
     right: 15%;
     box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 20px;
     border-radius: 5px;
