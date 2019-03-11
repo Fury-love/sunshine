@@ -3,6 +3,7 @@
     <Layout>
       <head-bar></head-bar>
       <side-bar></side-bar>
+
       <form action="/file/upload" method="post" enctype="multipart/form-data">
         文件:<input type="file" name="file"/>
         姓名:<input type="text" name="name"/>
