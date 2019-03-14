@@ -13,9 +13,9 @@ Vue.use(Router)
       name: 'Login',
       component: (resolve) => require(['@/components/pages/login'], resolve),
     },{
-      path: '/home',
-      name: 'HomePview',
-      component: (resolve)=>require(['@/components/pages/homeview'],resolve),
+      path: '/main',
+      name: 'main',
+      component: (resolve)=>require(['@/components/pages/main/main'],resolve),
     }
   ]
 })

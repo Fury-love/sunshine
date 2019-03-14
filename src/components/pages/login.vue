@@ -79,7 +79,7 @@
       handleSubmit(name) {
         this.$refs[name].validate((valid) => {
           if(this.formInline.user == 'admin'&&this.formInline.password == 'admin'){
-            this.$router.push({path:'/home'})
+            this.$router.push({path:'/main'})
           }
           // if (valid) {
           //
