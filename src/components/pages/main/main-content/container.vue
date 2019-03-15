@@ -18,11 +18,12 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .container{
     width: 1000px;
     margin: 10px auto;
     padding: 0 16px;
+    overflow: hidden;
   }
 
 </style>

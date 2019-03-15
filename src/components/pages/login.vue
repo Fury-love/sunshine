@@ -22,17 +22,17 @@
     <div class="title"></div>
     <div class="container">
       <div class="head"><Icon type="md-log-in" /> 欢迎登录</div>
-      <Form ref="formInline" :model="formInline" :rules="ruleInline" inline>
+      <Form ref="formInline" :model="formInline" :rules="ruleInline" inline @keydown.enter.native="handleSubmit('formInline')">
         <div>
           <FormItem style="width: 250px" prop="user">
-            <Input type="text" v-model="formInline.user" placeholder="Username">
+            <Input type="text" v-model.trim="formInline.user" placeholder="Username">
             <Icon type="ios-person-outline" slot="prepend"></Icon>
             </Input>
           </FormItem>
         </div>
         <div>
           <FormItem style="width: 250px" prop="password">
-            <Input type="password" v-model="formInline.password" placeholder="Password">
+            <Input type="password" v-model.trim="formInline.password" placeholder="Password">
             <Icon type="ios-lock-outline" slot="prepend"></Icon>
             </Input>
           </FormItem>
@@ -77,6 +77,7 @@
     },
     methods: {
       handleSubmit(name) {
+        console.log(11111)
         this.$refs[name].validate((valid) => {
           if(this.formInline.user == 'admin'&&this.formInline.password == 'admin'){
             this.$router.push({path:'/main'})
@@ -110,6 +111,7 @@
     height: 100px;
     border-radius: 50% / 50%;
     position: fixed;
+    background: url("../../images/logo.png") no-repeat center;
     top:8%;
     left: 8%;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 6px 20px;

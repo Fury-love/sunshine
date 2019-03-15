@@ -8,7 +8,9 @@ import {
   Input,
   Icon,
   Button,
-  Layout
+  Layout,
+  Tabs,
+  TabPane
 } from 'iview';
 
 Vue.component('Form',Form);
@@ -17,3 +19,5 @@ Vue.component('Input',Input);
 Vue.component('Icon',Icon);
 Vue.component('Button',Button);
 Vue.component('Layout',Layout);
+Vue.component('Tabs',Tabs);
+Vue.component('TabPane',TabPane);
