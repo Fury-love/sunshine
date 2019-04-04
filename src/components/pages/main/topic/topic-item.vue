@@ -10,10 +10,10 @@
       </div>
     </div>
     <div class="tab-title">
-      <span class="focusbtn">关注话题</span>
-      <a href=""><svg fill=""><image width="1rem" height="1rem" xlink:href="../../../../images/icon/set.png"></image></svg>管理</a>
-      <a href=""><svg><image width="1rem" height="1rem" xlink:href="../../../../images/icon/log.png"></image></svg>日志</a>
-      <a href=""><svg><image width="1rem" height="1rem" xlink:href="../../../../images/icon/share.png"></image></svg>分享</a>
+      <span class="btn btn-blue">关注话题</span>
+      <router-link to=""><svg fill=""><image width="1rem" height="1rem" xlink:href="../../../../images/icon/set.png"></image></svg>管理</router-link>
+      <router-link to=""><svg><image width="1rem" height="1rem" xlink:href="../../../../images/icon/log.png"></image></svg>日志</router-link>
+      <router-link to=""><svg><image width="1rem" height="1rem" xlink:href="../../../../images/icon/share.png"></image></svg>分享</router-link>
     </div>
   </div>
 </template>
@@ -62,22 +62,6 @@
   }
   .tab-title{
     padding: 0 20px 16px;
-    .focusbtn{
-      width: 100px;
-      min-width: 96px;
-      display: inline-block;
-      padding: 0 16px;
-      margin-right: 8px;
-      font-size: 14px;
-      line-height: 32px;
-      text-align: center;
-      cursor: pointer;
-      background: none;
-      border: 1px solid;
-      border-radius: 3px;
-      color: #FFFFFF;
-      background-color: #0084FF;
-    }
     svg{
       width: 1rem;
       height: 1rem;

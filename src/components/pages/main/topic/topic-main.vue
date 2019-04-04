@@ -5,6 +5,7 @@
         <TabPane label="索引" name="name1"><Reference></Reference></TabPane>
         <TabPane label="简介" name="name2"><Synopsis></Synopsis></TabPane>
         <TabPane label="讨论" name="name3"><Discuss></Discuss></TabPane>
+        <TabPane label="精品" name="name4"><Discuss></Discuss></TabPane>
       </Tabs>
     </div>
     <div class="list"></div>
@@ -25,7 +26,12 @@
     }
   }
 </script>
-
+<style>
+  .ivu-tabs-nav-container{
+    padding: 0 20px;
+    z-index: 1;
+  }
+</style>
 <style lang="scss" scoped>
   .topic-main {
     min-height: 100vh;

@@ -1,17 +1,17 @@
 <template>
   <div class="headbar">
     <div class="websiteLogo"><img src="" alt=""></div>
-    <ul class="tabmenu font-size-20 margin-right-20x">
+    <ul class="tabmenu font-size-16 margin-right-20x">
       <li><a>首页</a></li>
       <li><a>发现</a></li>
       <li><a>话题</a></li>
     </ul>
     <Input style="width: 270px;vertical-align: middle" size="small" search placeholder="Enter something..." />
-    <span class="quiz bg-51b0d6">提问</span>
+    <span class="btn btn-blue quiz">提问</span>
     <ul class="tabmenu font-size-20 float-right">
-      <li><Icon type="ios-notifications" /></li>
-      <li><Icon type="md-chatboxes" /></li>
-      <li><Icon type="logo-octocat" /></li>
+      <li><Icon custom="iconfont icon-sunguangbo" size="24"/></li>
+      <li><Icon custom="iconfont icon-sunxiaoxi" size="24"/></li>
+      <li><Icon custom="iconfont icon-sunicon_zhanghao" size="24"/></li>
     </ul>
   </div>
 </template>
@@ -41,13 +41,9 @@
       }
     }
   .quiz{
-    display: inline-block;
     vertical-align: middle;
-    padding: 4px 14px;
     font-size: 14px;
-    line-height: 24px;
     margin-left: 20px;
-    cursor: pointer;
   }
   }
 </style>

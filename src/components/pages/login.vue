@@ -21,19 +21,19 @@
     </vue-particles>
     <div class="title"></div>
     <div class="container">
-      <div class="head"><Icon type="md-log-in" /> 欢迎登录</div>
+      <div class="head"><Icon custom="iconfont icon-sunxiayibu" /> 欢迎登录</div>
       <Form ref="formInline" :model="formInline" :rules="ruleInline" inline @keydown.enter.native="handleSubmit('formInline')">
         <div>
           <FormItem style="width: 250px" prop="user">
             <Input type="text" v-model.trim="formInline.user" placeholder="Username">
-            <Icon type="ios-person-outline" slot="prepend"></Icon>
+            <Icon custom="iconfont icon-sunuser" slot="prepend"></Icon>
             </Input>
           </FormItem>
         </div>
         <div>
           <FormItem style="width: 250px" prop="password">
             <Input type="password" v-model.trim="formInline.password" placeholder="Password">
-            <Icon type="ios-lock-outline" slot="prepend"></Icon>
+            <Icon custom="iconfont icon-sunlock" slot="prepend"></Icon>
             </Input>
           </FormItem>
         </div>

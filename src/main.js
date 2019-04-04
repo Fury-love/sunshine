@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import '@/components/iview-ui'                //api:https://www.iviewui.com/docs/guide/start
 import '@/style/common.scss'
+import '@/style/icon/iconfont.css'
 
 Vue.use(router);
 
