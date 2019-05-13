@@ -23,29 +23,29 @@ export default {
    * @param {val} 插入的值
    * @param {posLen} 光标位置处在 插入的值的哪个位置
    */
-  setCursorPosition (dom,val,posLen) {
+  setCursorPosition(dom, val, posLen) {
     var cursorPosition = 0;
-    if(dom.selectionStart){
+    if (dom.selectionStart) {
       cursorPosition = dom.selectionStart;
     }
-    this.insertAtCursor(dom,val);
+    this.insertAtCursor(dom, val);
     dom.focus();
     console.log(posLen)
-    dom.setSelectionRange(dom.value.length,cursorPosition + (posLen || val.length));
+    dom.setSelectionRange(dom.value.length, cursorPosition + (posLen || val.length));
   },
   /*光标所在位置插入字符*/
   insertAtCursor(dom, val) {
-    if (document.selection){
+    if (document.selection) {
       dom.focus();
       sel = document.selection.createRange();
       sel.text = val;
       sel.select();
-    }else if (dom.selectionStart || dom.selectionStart == '0'){
+    } else if (dom.selectionStart || dom.selectionStart == '0') {
       let startPos = dom.selectionStart;
       let endPos = dom.selectionEnd;
       let restoreTop = dom.scrollTop;
       dom.value = dom.value.substring(0, startPos) + val + dom.value.substring(endPos, dom.value.length);
-      if (restoreTop > 0){
+      if (restoreTop > 0) {
         dom.scrollTop = restoreTop;
       }
       dom.focus();
