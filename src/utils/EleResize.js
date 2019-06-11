@@ -1,4 +1,4 @@
-// 监听div变化，resize()
+// 监听div变化，实现div resize()
   const EleResize = {
     _handleResize: function(e) {
       var ele = e.target || e.srcElement;

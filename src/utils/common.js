@@ -37,7 +37,7 @@ export default {
   insertAtCursor(dom, val) {
     if (document.selection) {
       dom.focus();
-      sel = document.selection.createRange();
+      var sel = document.selection.createRange();
       sel.text = val;
       sel.select();
     } else if (dom.selectionStart || dom.selectionStart == '0') {

@@ -15,7 +15,7 @@
     <div class="side-card middle-card">
       <div class="topic-main">父话题</div>
       <div class="topiclist">
-        <router-link :key="index" v-for="(item,index) in topicList" :to="item.url"><span>{{item.value}}</span></router-link>
+        <router-link :key="index" v-for="(item,index) in topicList" :to="item.urls"><span>{{item.value}}</span></router-link>
       </div>
       <div><a class="topic-bottom">查看全部话题</a></div>
     </div>
