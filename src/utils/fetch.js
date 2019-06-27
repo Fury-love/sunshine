@@ -6,7 +6,7 @@ import urls from "@/api/urls"
 axios.defaults.timeout = 10000;
 axios.defaults.headers.post["Content-Type"] = "application/json";
 // 配置程序基础路径
-axios.defaults.baseURL = urls.base
+axios.defaults.baseURL = '/sunshine'
 
 //POST传参序列化(添加请求拦截器)
 axios.interceptors.request.use((config) => {

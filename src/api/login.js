@@ -1,5 +1,5 @@
 import fetch from '../utils/fetch'
-import url from 'src/api/urls'
+import url from '@/api/urls'
 
 export default {
     //获取动态验证码

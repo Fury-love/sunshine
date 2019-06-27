@@ -1,11 +1,26 @@
 <!--简介-->
 <template>
-<div>2</div>
+<div>
+    <div v-for="item in list" :key="item.id">
+    </div>
+</div>
 </template>
 
 <script>
     export default {
-        name: "Synopsis"
+        name: "Synopsis",
+        data(){
+            return{
+                list:[{
+                    id:1
+                },{
+                    id:2
+                },{
+                    id:3
+                }],
+                sum:this.count
+            }
+        },
     }
 </script>
 

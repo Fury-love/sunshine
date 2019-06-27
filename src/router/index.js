@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import login from '@/components/pages/login'
 
 Vue.use(Router)
 
@@ -17,7 +16,7 @@ const router = new Router({
         }, {
             path: '/login',
             name: 'Login',
-            component: login,
+            component: r => require.ensure([], () => r(require('@/components/pages/login')), 'home-pages'),
         }, {
             path: '/main',
             name: 'main',

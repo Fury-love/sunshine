@@ -44,10 +44,10 @@
                 <div>
                     <FormItem style="width: 250px" prop="captcha">
                         <Row>
-                            <Col>
-                                <Input type="password" v-model.trim="formInline.captcha" placeholder="请输入验证码"></Input>
+                            <Col span="12">
+                                <Input  type="text" v-model.trim="formInline.captcha" placeholder="请输入验证码"></Input>
                             </Col>
-                            <Col>
+                            <Col span="12">
                                 <img :src="captchaPath" @click="getCaptchaPath">
                             </Col>
                         </Row>
@@ -97,7 +97,7 @@
             }
         },
         created(){
-
+            this.getCaptchaPath();
         },
         methods: {
             handleSubmit(name) {
@@ -115,8 +115,8 @@
             },
             //获取动态验证码
             getCaptchaPath() {
-                var uuid =
-                Login.getCaptchaPath()
+                var uuid = this.$commonuse.getUUID();
+                this.captchaPath = Login.getCaptchaPath(uuid);
             }
         }
     }
