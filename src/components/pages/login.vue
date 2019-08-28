@@ -45,20 +45,20 @@
                     <FormItem style="width: 250px" prop="captcha">
                         <Row>
                             <Col span="12">
-                                <Input  type="text" v-model.trim="formInline.captcha" placeholder="请输入验证码"></Input>
+                                <Input type="text" v-model.trim="formInline.captcha" placeholder="请输入验证码"></Input>
                             </Col>
-                            <Col span="12">
-                                <img :src="captchaPath" @click="getCaptchaPath">
+                            <Col span="12" style="padding: 2px;">
+                                <img style="width: 100%" :src="captchaPath" @click="getCaptchaPath">
                             </Col>
                         </Row>
                     </FormItem>
                 </div>
-                <div style="margin-bottom: 12px;width: 320px;text-align: left;position: relative;padding-left:35px;height: 50px">
-          <span class="auto-login">
-            <input type="checkbox" class="auto-check" value="" :model="formInline.checked">
-            <span></span><label class="auto-text">自动登录</label></span>
-                    <!--<span class="forget-psw">忘记密码？</span>-->
-                </div>
+                <!--                <div style="margin-bottom: 12px;width: 320px;text-align: left;position: relative;padding-left:35px;height: 50px">-->
+                <!--&lt;!&ndash;          <span class="auto-login">&ndash;&gt;-->
+                <!--&lt;!&ndash;            <input type="checkbox" class="auto-check" value="" :model="formInline.checked">&ndash;&gt;-->
+                <!--&lt;!&ndash;            <span></span><label class="auto-text">自动登录</label></span>&ndash;&gt;-->
+                <!--                    &lt;!&ndash;<span class="forget-psw">忘记密码？</span>&ndash;&gt;-->
+                <!--                </div>-->
                 <FormItem>
                     <Button style="width: 250px;" type="primary" @click="handleSubmit('formInline')">登录</Button>
                 </FormItem>
@@ -68,6 +68,7 @@
 </template>
 
 <script>
+    import url from '@/api/urls'
     import Vue from 'vue'
     import VueParticles from 'vue-particles'
     import Login from '@/api/login'
@@ -96,12 +97,11 @@
                 captchaPath: "",
             }
         },
-        created(){
+        created() {
             this.getCaptchaPath();
         },
         methods: {
             handleSubmit(name) {
-                console.log(11111)
                 this.$refs[name].validate((valid) => {
                     if (this.formInline.user == 'admin' && this.formInline.password == 'admin') {
                         this.$router.push({path: '/main'})
@@ -116,7 +116,9 @@
             //获取动态验证码
             getCaptchaPath() {
                 var uuid = this.$commonuse.getUUID();
-                this.captchaPath = Login.getCaptchaPath(uuid);
+                this.$nextTick(() => {
+                    this.captchaPath = url.baseUrl + url.getCaptchaPath + '?uuid=' + uuid;
+                })
             }
         }
     }

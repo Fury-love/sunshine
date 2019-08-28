@@ -20,7 +20,7 @@ const router = new Router({
         }, {
             path: '/main',
             name: 'main',
-            component: resolve => require(['@/components/pages/main/main.vue'], resolve),
+            component:r => require.ensure([], () => r(require('@/components/pages/main/main')), 'home-pages') ,
         }
     ]
 })

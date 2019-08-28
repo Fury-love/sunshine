@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
 import '@/components/iview-ui'                //api:https://www.iviewui.com/docs/guide/start
 import '@/style/common.scss'
 import '@/style/icon/iconfont.css'
@@ -15,5 +16,6 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
     router,
+    store,
     render: h => h(App)
 }).$mount("#app");
