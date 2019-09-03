@@ -114,6 +114,16 @@
         ],
       }
     },
+      mounted() {
+        let aList = document.getElementsByTagName('a')
+          for (let a in aList) {
+              a.addEventListener("click",(e)=> {
+                  console.log("监听dom滚动",e.target)
+                  //根据a标签的href转换为id选择器，获取id元素所处的位置，并高度减50px（这里根据需要自由设置）
+                  // $('html,body').animate({scrollTop: ($($(this).attr('href')).offset().top -50 )},1000);
+              })
+          }
+      }
   }
 </script>
 

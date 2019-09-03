@@ -8,8 +8,11 @@ import '@/components/iview-ui'                //api:https://www.iviewui.com/docs
 import '@/style/common.scss'
 import '@/style/icon/iconfont.css'
 import Common from '@/utils/common'
+import api from '@/api'
 
 Vue.prototype.$commonuse = Common;
+
+Vue.prototype.$Api = api;
 //阻止生产模式启动提示信息
 Vue.config.productionTip = false
 

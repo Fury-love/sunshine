@@ -71,7 +71,6 @@
     import url from '@/api/urls'
     import Vue from 'vue'
     import VueParticles from 'vue-particles'
-    import Login from '@/api/login'
 
     Vue.use(VueParticles)
     export default {
@@ -79,9 +78,8 @@
         data() {
             return {
                 formInline: {
-                    user: '',
+                    userName: '',
                     password: '',
-                    checked: true,
                     uuid: '',
                     captcha: '',
                 },
@@ -100,24 +98,26 @@
         created() {
             this.getCaptchaPath();
         },
+        mounted(){
+        },
         methods: {
             handleSubmit(name) {
                 this.$refs[name].validate((valid) => {
-                    if (this.formInline.user == 'admin' && this.formInline.password == 'admin') {
-                        this.$router.push({path: '/main'})
+                    console.log((valid))
+                    if (valid) {
+                        this.$Api.login(this.formInline).then(data=>{
+                            this.$router.push({path: '/main'})
+                        })
+                    }else{
+                        this.$Message.error('登录失败!')
                     }
-                    // if (valid) {
-                    //
-                    // } else {
-                    //
-                    // }
                 })
             },
             //获取动态验证码
             getCaptchaPath() {
-                var uuid = this.$commonuse.getUUID();
+                this.formInline.uuid = this.$commonuse.getUUID();
                 this.$nextTick(() => {
-                    this.captchaPath = url.baseUrl + url.getCaptchaPath + '?uuid=' + uuid;
+                    this.captchaPath = url.baseUrl + url.getCaptchaPath + '?uuid=' + this.formInline.uuid;
                 })
             }
         }

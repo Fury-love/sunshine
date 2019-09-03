@@ -24,21 +24,11 @@ axios.interceptors.response.use((res) => {
 });
 
 //返回一个Promise(发送post请求)
-export default function fetch(url, params, isGet, isJSON) {
+function fetch(url, params, method, isJSON) {
     // 如果没有网络
     if (!navigator.onLine) {
         return;
     }
-    console.log('参数', params)
-    let method = 'post'
-    // 如果是get请求
-    if (isGet) {
-        params = {
-            params: params
-        }
-        method = 'get'
-    }
-
     return new Promise((resolve, reject) => {
         axios[method](url, params)
             .then(response => {
@@ -67,3 +57,19 @@ export default function fetch(url, params, isGet, isJSON) {
             })
     })
 }
+const http = {
+    put:(requestUrl, params) => {
+        return fetch(requestUrl, params, "put")
+    },
+    post:(requestUrl, params) => {
+        return fetch(requestUrl, params, "post")
+    },
+    get:(requestUrl, params) => {
+        return fetch(requestUrl, params, "get")
+    },
+    del:(requestUrl, params) => {
+        return fetch(requestUrl, params, "delete")
+    },
+}
+
+export default http;
