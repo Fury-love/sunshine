@@ -52,7 +52,7 @@ module.exports = {
     hotOnly: false,
     proxy: {
       "/sunshine": {
-        target: "http://localhost:8080",
+        target: "http://localhost:9099",
         secure: false
       }
     } // 设置代理

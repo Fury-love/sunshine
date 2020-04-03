@@ -11,7 +11,7 @@ urlArr.forEach(item=>{
 
 export default {
   /*通用地址*/
-  baseUrl:'http://localhost:8080/sunshine',
+  baseUrl:'http://localhost:9099/sunshine',
 
   /*获取动态验证码*/
   getCaptchaPath:'/authcode.jpg',

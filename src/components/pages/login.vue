@@ -48,7 +48,7 @@
                                 <Input type="text" v-model.trim="formInline.captcha" placeholder="请输入验证码"></Input>
                             </Col>
                             <Col span="12" style="padding: 2px;">
-                                <img style="width: 100%" :src="captchaPath" @click="getCaptchaPath">
+                                <img style="width: 100%;cursor: pointer" :src="captchaPath" @click="getCaptchaPath">
                             </Col>
                         </Row>
                     </FormItem>
@@ -98,17 +98,18 @@
         created() {
             this.getCaptchaPath();
         },
-        mounted(){
+        mounted() {
         },
         methods: {
             handleSubmit(name) {
+                this.$router.push({path: '/main'});
                 this.$refs[name].validate((valid) => {
-                    console.log((valid))
+                    console.log((valid));
                     if (valid) {
-                        this.$Api.login(this.formInline).then(data=>{
+                        this.$Api.login(this.formInline).then(data => {
                             this.$router.push({path: '/main'})
                         })
-                    }else{
+                    } else {
                         this.$Message.error('登录失败!')
                     }
                 })

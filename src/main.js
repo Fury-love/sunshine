@@ -10,6 +10,8 @@ import '@/style/icon/iconfont.css'
 import Common from '@/utils/common'
 import api from '@/api'
 
+import dataV from '@jiaminghi/data-view'
+Vue.use(dataV)
 Vue.prototype.$commonuse = Common;
 
 Vue.prototype.$Api = api;

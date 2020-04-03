@@ -32,11 +32,12 @@ function fetch(url, params, method, isJSON) {
     return new Promise((resolve, reject) => {
         axios[method](url, params)
             .then(response => {
-                let res = response.data
+                let res = response.data;
+                console.log('res',res);
                 if (typeof res == "string")
                     return resolve("");
                 // 根据全局的报文规范、统一返回报文需要的主题内容
-                if (res.status) {
+                if (res.status === 200) {
                     if (typeof res.total != 'undefined') {
                         if (!res.data) {
                             res.data = []
